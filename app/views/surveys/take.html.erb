@@ -1,0 +1,12 @@
+<h2><%= @survey.title %></h2>
+
+
+<%= form_for @answer do |f| %>
+  <% counter = 0 %>
+  <% @questions.each do |q| %>
+    <% counter += 1 %>
+    <%= f.label q.prompt %>
+    <%= f.text_field counter %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

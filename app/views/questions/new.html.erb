@@ -4,11 +4,12 @@
   <%= form.text_field(:prompt) %>
   <%= form.submit("Submit") %>
 <% end %>
-
 <% if @survey.questions.any? %>
   <ul>
     <% @survey.questions.each do |q| %>
-      <li><%= q.prompt %></li>
+      <% if q.prompt != nil %>
+        <li><%= q.prompt %></li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>

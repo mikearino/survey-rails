@@ -22,4 +22,17 @@ class SurveysController < ApplicationController
     survey.save
     redirect_to '/surveys'
   end
+
+  def take
+    survey_id = params[:survey_id]
+    @survey = Survey.find(survey_id)
+    @answer = Answer.new
+    @questions = @survey.questions
+    render :take
+  end
+
+  def submit
+    bugbye
+  end
+
 end
