@@ -1,0 +1,14 @@
+<h2>Add a question to this survey:</h2>
+<%= form_for [@survey, @question] do |form| %>
+  <%= form.label("Question Prompt:") %>
+  <%= form.text_field(:prompt) %>
+  <%= form.submit("Submit") %>
+<% end %>
+
+<% if @survey.questions.any? %>
+  <ul>
+    <% @survey.questions.each do |q| %>
+      <li><%= q.prompt %></li>
+    <% end %>
+  </ul>
+<% end %>

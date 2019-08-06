@@ -1,0 +1,6 @@
+<%= link_to 'Add A Survey', new_survey_path, :class => 'btn btn-success' %>
+<% if @surveys.any? %>
+  <% @surveys.each do |survey| %>
+    <h3><%= link_to survey.title, survey_path(survey) %></h3>
+  <% end %>
+<% end %>
